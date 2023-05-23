@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="container shadow-lg mt-2">
+     <h1>Rekap Penjualan</h1>
+     <button class="btn btn-secondary mt-2" (click)="exportAsPDF()">Export PDF</button>
+     <div class="container shadow-lg card  mt-2" id="contentToConvert">
+
+          <div class="row">
+               <div class="col ">
+                    <div class="table-responsive">
+                         <table class="table table-hover">
+                              <thead>
+                                   <tr class="text-center ">
+                                        <th>No</th>
+                                        <th>Layanan</th>
+                                        <th>Menu</th>
+                                        <th>Total Bayar</th>
+                                        <th>Jenis Transaksi</th>
+                                        <th>Tanggal Transaksi</th>
+                                        <th>Nama Customer</th>
+                                   </tr>
+                              </thead>
+                              <tbody>
+                                   <tr *ngFor="let transaksi of data;index as i">
+                                        <td>{{ i+1 }}</td>
+                                        <td>
+                                             <table class="table table-sm">
+                                                  <thead>
+                                                       <tr>
+                                                            <th>Nama</th>
+                                                            <th>Harga</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td>{{ transaksi.nama_layanan}}</td>
+                                                            <td>{{ transaksi.harga_layanan |currency:"Rp. "}}</td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </td>
+                                        <td>
+                                             <table class="table table-sm">
+                                                  <thead>
+                                                       <tr>
+                                                            <th>Nama</th>
+                                                            <th>Harga</th>
+                                                            <th>Jumlah</th>
+                                                            <th>Total</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr *ngFor="let menu of transaksi.menu">
+                                                            <td>{{ menu.nama }}</td>
+                                                            <td>{{ menu.harga |currency:"Rp. "}}</td>
+                                                            <td>{{ menu.jumlah }}</td>
+                                                            <td>{{ menu.total }}</td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </td>
+                                        <td class="text-center">{{ transaksi.total_bayar |currency:"Rp. "}}</td>
+                                        <td class="text-center">{{ transaksi.jenis_transaksi }}</td>
+                                        <td class="text-center">{{ transaksi.tanggal_transaksi }}</td>
+                                        <td class="text-center">{{ transaksi.nama_customer }}</td>
+                                   </tr>
+                              </tbody>
+                         </table>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

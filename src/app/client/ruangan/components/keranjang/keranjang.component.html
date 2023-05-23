@@ -1,0 +1,60 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="container">
+     <div class="row justify-content-center">
+          <div class="col-md-8">
+               <div class="card">
+                    <div class="card-body">
+                         <h2>Keranjang Reservasi</h2>
+                         <div class="row">
+                              <div class="col-md-6">
+                                   <ul class="list-group">
+                                        <li class="list-group-item" *ngFor="let item of listRuangan">
+                                             <h4>{{ item.nama }}</h4>
+                                             <div *ngIf="item">
+                                                  <h5>Pilih Jam Sewa</h5>
+                                                  <div class="form-check">
+                                                       <input type="radio" class="form-check-input" name="harga"
+                                                            id="harga1jam" [value]="item.harga1jam"
+                                                            [(ngModel)]="selectedPrice">
+                                                       <label class="form-check-label" for="harga1jam">1 Jam - {{
+                                                            item.harga1jam
+                                                            }}</label>
+                                                  </div>
+                                                  <div class="form-check">
+                                                       <input type="radio" class="form-check-input" name="harga"
+                                                            id="harga3jam" [value]="item.harga3jam"
+                                                            [(ngModel)]="selectedPrice">
+                                                       <label class="form-check-label" for="harga3jam">3 Jam - {{
+                                                            item.harga3jam
+                                                            }}</label>
+                                                  </div>
+                                             </div>
+                                             <table class="table mt-3" *ngIf="selectedPrice > 0">
+                                                  <thead>
+                                                       <tr>
+                                                            <th scope="col">Ruangan</th>
+                                                            <th scope="col">Harga</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       <tr>
+                                                            <td>{{ item.nama }}</td>
+                                                            <td>{{ selectedPrice }}</td>
+                                                       </tr>
+                                                  </tbody>
+                                             </table>
+                                        </li>
+                                   </ul>
+                              </div>
+                              <div class="col-md-6">
+                                   <!-- Content in the right column -->
+
+                                   <a></a>
+                              </div>
+                         </div>
+                         <!-- Rest of the content -->
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

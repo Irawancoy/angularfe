@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+<header>
+     <div class="jumbotron jumbotron-fluid rounded-2 text-center">
+          <div class="container">
+               <h1 class="font-italic border-bottom">{{ dataTentangKami?.judul }}</h1>
+               <img src="{{ dataTentangKami?.gambar }}" width="150" height="150">
+          </div>
+     </div>
+</header>
+
+<div class="text-center">
+     <h4>{{ dataTentangKami?.deskripsi }}</h4>
+     <!-- <h4 [innerHTML]="dataTentangKami?.deskripsi"></h4> -->
+</div>

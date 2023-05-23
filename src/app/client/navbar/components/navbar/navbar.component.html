@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+     <div class="container ">
+          <!-- <img src="http://localhost:8000/assets/img/LogoOPt.png" width="50" height="50"
+               style="background-color: black; border-radius: 10%;"> -->
+          <a class="navbar-brand" href="/">Omah Petoeng</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav">
+                    <li class="nav-item">
+                         <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active']">Home</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" [routerLink]="['/menu']" [routerLinkActive]="['active']">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" [routerLink]="['/ruangan']" [routerLinkActive]="['active']">Ruangan</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" [routerLink]="['/tentang-kami']" [routerLinkActive]="['active']">Tentang
+                              Kami</a>
+                    </li>
+
+               </ul>
+          </div>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+               <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Akun Saya
+                         </a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item border-bottom">{{ this.email }}</a>
+                              <a class="dropdown-item" [routerLink]="['/profile']">Setting Profile</a>
+
+                              <!-- <a class="dropdown-item" [routerLink]="['/reservasi']">Reservasi</a> -->
+                              <!-- <a class="dropdown-item" [routerLink]="['/keranjang']">Keranjang</a> -->
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" (click)="logout()">Logout</a>
+                         </div>
+                    </li>
+               </ul>
+          </div>
+     </div>
+</nav>
